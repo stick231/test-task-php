@@ -6,10 +6,13 @@ class RangeNum{
         $numRangeArr = [];
 
         for($minCycle = $min; $minCycle <= $max; $minCycle++){
-            $numRangeArr[] = $minCycle;
+            if(gmp_prob_prime($minCycle) === 2)
+            {
+                $numRangeArr[] = $minCycle;
+            }
         }
         
-        return $numRangeArr;
+       return $numRangeArr;
     }
 }
 
